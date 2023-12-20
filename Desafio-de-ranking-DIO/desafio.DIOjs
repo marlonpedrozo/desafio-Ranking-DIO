@@ -1,0 +1,71 @@
+/*
+Projeto Dio
+
+funçao que recebe comom parametro 
+a quantidade de DERROTAS de um jogador
+depois retorne o resultado para uma variqavl o saldo de RANKEADAS
+DEve ser feito o calculo  Vitorias- derrotas
+
+se vitorias for menor q 10 = ferro
+se vitorias for entre 11 e 20 = bronze
+se vitorias for entre 21 e 50 prata
+se vitorias for entre 51 e 80 ouro
+
+se vitorias for entre81 e 90 diamante
+se vitorias for entre 91 e 100 lendario
+se vitorias for maior ou igual a 101 imortal
+
+(vaiaveis)
+saldoVitorias V-D
+nivel
+*/
+
+
+
+let nivel = "";
+let derrotas = 5;
+let vitorias = 8; 
+
+
+
+// Passe os parâmetros de vitoria e derrota 
+
+function ranking( vitorias , derrotas ){
+   let saldoVitorias = parseInt((vitorias - derrotas));
+
+   if(saldoVitorias <=0 ){
+    nivel ="Não classificado";
+    console.log(`seu saldo de vitorias foi insuficiente , vitórias ${saldoVitorias}: ${nivel} `)
+
+    //CRIAR UMA AÇAO CASO NINGUEM BOTE
+     
+}else if(saldoVitorias == NaN || saldoVitorias == undefined){
+    console.log(`HOUVE UM ERRO! Por favor verifique se o Número de vitorias e derrotas foi definido e tente novamente`)    
+}else if(saldoVitorias >0 && saldoVitorias <= 10){
+    nivel ="Prata";
+    console.log(`Seu número de vitorias é : ${vitorias} ,seu Ranking é ${saldoVitorias}  e seu nível é : ${nivel} `)    
+}else if(saldoVitorias >= 11 && saldoVitorias <= 20 ){
+    nivel ="Bronze";
+    console.log(`Seu número de vitorias é : ${vitorias}  ,seu Ranking é ${saldoVitorias} e seu nível é : ${nivel} `)
+}else if(saldoVitorias >= 21 && saldoVitorias <= 50 ){
+    nivel ="Ouro";
+    console.log(`Seu número de vitorias é : ${vitorias}  ,seu Ranking é ${saldoVitorias} e seu nível é : ${nivel} `)
+}else if(vitorias >= 51 && saldoVitorias <= 90 ){
+    nivel ="Diamante";
+    console.log(`Seu número de vitorias é : ${vitorias} ,seu Ranking é ${saldoVitorias} e seu nível é : ${nivel} `)
+}else if(saldoVitorias >= 91 && saldoVitorias <= 100 ){
+    nivel ="Lendário";
+    console.log(`Seu número de vitorias é : ${vitorias} ,seu Ranking é ${saldoVitorias} e seu nível é : ${nivel} `)
+}else if(saldoVitorias >= 101 ){
+    nivel ="Imortal";
+    console.log(`Seu número de vitorias é : ${vitorias}  , seu Ranking é ${saldoVitorias} e seu nível é : ${nivel} `)
+}else{
+    console.log("Não é o adequado,mas houve um erro inesperado")
+}; 
+
+}
+
+ranking(vitorias, derrotas);
+
+
+ 
